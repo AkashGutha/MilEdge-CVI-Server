@@ -1,0 +1,484 @@
+1. CVI=0.1
+
+{
+    "functional_benefits": {
+        "ease": 1,
+        "efficiency": 1,
+        "effectiveness": 1,
+        "usability": 1,
+        "reliability": 1,
+        "service_support": 1
+    },
+    "social_benefits": {
+        "familiarity": 1,
+        "exclusiveness": 1,
+        "peer_imitation": 1,
+        "privilege": 1,
+        "core_belief": 1,
+        "sense_of_belongingness": 1
+    },
+    "psychological_benefits": {
+        "pride": 1,
+        "passion": 1,
+        "surprise": 1,
+        "pleasure": 1,
+        "sensory appeal": 1,
+        "emotional engagement": 1,
+        "interests": 1,
+    },
+    "opportunity_cost": {
+        "assistance": 1,
+        "convenience": 1,
+        "predictability": 1,
+        "hassle_data": 1,
+        "timeliness": 1,
+        "reduction_of_uncertainity": 1
+    },
+    "monetary_cost": {
+        "monetary_rewards": 1,
+        "monetary_cost": 1
+    }
+}
+
+
+2. CVI=0.18
+
+{
+    "functional_benefits": {
+        "ease": 1,
+        "efficiency": 1,
+        "effectiveness": 1,
+        "usability": 1,
+        "reliability": 1,
+        "service_support": 1
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 1,
+        "peer_imitation": 1,
+        "privilege": 1,
+        "core_belief": 1,
+        "sense_of_belongingness": 4
+    },
+    "psychological_benefits": {
+        "pride": 1,
+        "passion": 1,
+        "surprise": 1,
+        "pleasure": 1,
+        "sensory appeal": 1,
+        "emotional engagement": 4,
+        "interests": 1,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 1,
+        "convenience": 1,
+        "predictability": 1,
+        "hassle_data": 1,
+        "timeliness": 1,
+        "reduction_of_uncertainity": 1
+    },
+    "monetary_cost": {
+        "monetary_rewards": 1,
+        "maintenance_cost": 1
+    }
+}
+
+
+3. CVI=0.38
+
+{
+    "functional_benefits": {
+        "ease": 1,
+        "efficiency": 1,
+        "effectiveness": 1,
+        "usability": 2,
+        "reliability": 2,
+        "service_support": 2
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 1,
+        "peer_imitation": 4,
+        "privilege": 1,
+        "core_belief": 4,
+        "sense_of_belongingness": 4
+    },
+    "psychological_benefits": {
+        "pride": 1,
+        "passion": 4,
+        "surprise": 1,
+        "pleasure": 1,
+        "sensory appeal": 1,
+        "emotional engagement": 6,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 1,
+        "predictability": 1,
+        "hassle_data": 2,
+        "timeliness": 1,
+        "reduction_of_uncertainity": 1
+    },
+    "monetary_cost": {
+        "monetary_rewards": 1,
+        "maintenance_cost": 2
+    }
+}
+
+
+4. CVI=0.38
+
+{
+    "functional_benefits": {
+        "ease": 1,
+        "efficiency": 1,
+        "effectiveness": 1,
+        "usability": 2,
+        "reliability": 2,
+        "service_support": 2
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 1,
+        "peer_imitation": 4,
+        "privilege": 1,
+        "core_belief": 4,
+        "sense_of_belongingness": 4
+    },
+    "psychological_benefits": {
+        "pride": 1,
+        "passion": 4,
+        "surprise": 1,
+        "pleasure": 1,
+        "sensory appeal": 1,
+        "emotional engagement": 6,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 1,
+        "predictability": 1,
+        "hassle_data": 2,
+        "timeliness": 1,
+        "reduction_of_uncertainity": 1
+    },
+    "monetary_cost": {
+        "monetary_rewards": 1,
+        "maintenance_cost": 2
+    }
+}
+
+
+
+5. CVI=1
+
+{
+    "functional_benefits": {
+        "ease": 2,
+        "efficiency": 2,
+        "effectiveness": 1,
+        "usability": 2,
+        "reliability": 2,
+        "service_support": 2
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 6,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 6,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 2,
+        "sensory appeal": 2,
+        "emotional engagement": 6,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 6,
+        "hassle_data": 2,
+        "timeliness": 2,
+        "reduction_of_uncertainity": 6
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 2
+    }
+}
+
+
+
+6. CVI=1.43
+
+{
+    "functional_benefits": {
+        "ease": 10,
+        "efficiency": 4,
+        "effectiveness": 1,
+        "usability": 2,
+        "reliability": 2,
+        "service_support": 2
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 6,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 6,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 4,
+        "sensory appeal": 4,
+        "emotional engagement": 6,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 8,
+        "hassle_data": 2,
+        "timeliness": 4,
+        "reduction_of_uncertainity": 10
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 2
+    }
+}
+
+
+7. CVI=3.29
+
+{
+    "functional_benefits": {
+        "ease": 10,
+        "efficiency": 10,
+        "effectiveness": 1,
+        "usability": 4,
+        "reliability": 4,
+        "service_support": 4
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 6,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 6,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 6,
+        "sensory appeal": 4,
+        "emotional engagement": 6,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 8,
+        "hassle_data": 10,
+        "timeliness": 10,
+        "reduction_of_uncertainity": 10
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 4
+    }
+}
+
+
+8. CVI=3.29
+
+{
+    "functional_benefits": {
+        "ease": 10,
+        "efficiency": 10,
+        "effectiveness": 1,
+        "usability": 4,
+        "reliability": 4,
+        "service_support": 4
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 6,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 6,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 6,
+        "sensory appeal": 4,
+        "emotional engagement": 6,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 8,
+        "hassle_data": 10,
+        "timeliness": 10,
+        "reduction_of_uncertainity": 10
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 4
+    }
+}
+
+
+9. CVI=3.55
+
+{
+    "functional_benefits": {
+        "ease": 10,
+        "efficiency": 10,
+        "effectiveness": 1,
+        "usability": 4,
+        "reliability": 4,
+        "service_support": 4
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 10,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 8,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 6,
+        "sensory appeal": 6,
+        "emotional engagement": 10,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 8,
+        "hassle_data": 10,
+        "timeliness": 10,
+        "reduction_of_uncertainity": 10
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 4
+    }
+}
+
+
+10. CVI=3.55
+
+{
+    "functional_benefits": {
+        "ease": 10,
+        "efficiency": 10,
+        "effectiveness": 1,
+        "usability": 4,
+        "reliability": 4,
+        "service_support": 4
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 10,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 8,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 6,
+        "sensory appeal": 6,
+        "emotional engagement": 10,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 8,
+        "hassle_data": 10,
+        "timeliness": 10,
+        "reduction_of_uncertainity": 10
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 4
+    }
+}
+
+
+
+11. CVI=3.61
+
+{
+    "functional_benefits": {
+        "ease": 10,
+        "efficiency": 10,
+        "effectiveness": 1,
+        "usability": 4,
+        "reliability": 4,
+        "service_support": 4
+    },
+    "social_benefits": {
+        "familiarity": 10,
+        "exclusiveness": 10,
+        "peer_imitation": 4,
+        "privilege": 10,
+        "core_belief": 4,
+        "sense_of_belongingness": 10
+    },
+    "psychological_benefits": {
+        "pride": 10,
+        "passion": 4,
+        "surprise": 10,
+        "pleasure": 6,
+        "sensory appeal": 6,
+        "emotional engagement": 10,
+        "interests": 10,
+	
+    },
+    "opportunity_cost": {
+        "assistance": 10,
+        "convenience": 10,
+        "predictability": 8,
+        "hassle_data": 10,
+        "timeliness": 10,
+        "reduction_of_uncertainity": 10
+    },
+    "monetary_cost": {
+        "monetary_rewards": 10,
+        "maintenance_cost": 4
+    }
+}

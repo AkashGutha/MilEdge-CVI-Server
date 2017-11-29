@@ -1,0 +1,39 @@
+{
+    "functional_benefits": {
+        "ease": 0,
+        "efficiency": 0,
+        "effectiveness": 0,
+        "usability": 0,
+        "reliability": 0,
+        "service_support": 0
+    },
+    "social_benefits": {
+        "familiarity": 0,
+        "exclusiveness": 0,
+        "peer_imitation": 0,
+        "privilege": 0,
+        "core_belief": 0,
+        "sense_of_belongingness": 0
+    },
+    "psychological_benefits": {
+        "familiarity": 0,
+        "exclusiveness": 0,
+        "peer_imitation": 0,
+        "privilege": 0,
+        "core_belief": 0,
+        "sense_of_belongingness": 0,
+        "interests": 0
+    },
+    "opportunity_cost": {
+        "assistance": 0,
+        "convenience": 0,
+        "predictability": 0,
+        "hassle_data": 0,
+        "timeliness": 0,
+        "reduction_of_uncertainity": 0
+    },
+    "monetary_cost": {
+        "monetary_rewards": 0,
+        "monetary_cost": 0
+    }
+}

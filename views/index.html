@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<style>
+		body {
+			margin: 0 100px 0 100px;
+			background-color: #1E2333;
+		}
+
+		.chart-class {
+			margin-bottom: 20px;
+		}
+
+		.cvi-class {
+			margin-top: 20px;
+			background-color: #2F3547;
+			color: #ffffff;
+			width: 100%;
+			text-align: center;
+			height: 100px;
+			margin-bottom: 20px;
+			padding-top: 50px;
+		}
+
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 300px;
+			border: 1px dotted #FFF;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+
+			/* Position the tooltip */
+			position: absolute;
+			z-index: 1;
+		}
+
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var dataObj = {
+				"functional_benefits": {
+					"ease": 1.2,
+					"efficiency": 1.2,
+					"effectiveness": 1.2,
+					"usability": 2,
+					"reliability": 2,
+					"service_support": 2
+				},
+				"social_benefits": {
+					"familiarity": 1.20,
+					"exclusiveness": 1.2,
+					"peer_imitation": 4,
+					"privilege": 1.2,
+					"core_belief": 4,
+					"sense_of_belongingness": 4
+				},
+				"psychological_benefits": {
+					"pride": 1.2,
+					"passion": 4,
+					"surprise": 1.2,
+					"pleasure": 1.2,
+					"sensory_appeal": 1.2,
+					"emotional_engagement": 6,
+					"interests": 1.20,
+
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 1.2,
+					"predictability": 1.2,
+					"hassle_data": 2,
+					"timeliness": 1.2,
+					"reduction_of_uncertainity": 1.2
+				},
+				"monetary_cost": {
+					"monetary_rewards": 1.2,
+					"maintenance_cost": 2
+				}
+			};
+
+			var functional_benefits = dataObj.functional_benefits.ease + dataObj.functional_benefits.effectiveness +
+				dataObj.functional_benefits.efficiency +
+				dataObj.functional_benefits.usability +
+				dataObj.functional_benefits.reliability +
+				dataObj.functional_benefits.service_support;
+
+			var social_benefits = dataObj.social_benefits.familiarity +
+				dataObj.social_benefits.exclusiveness +
+				dataObj.social_benefits.peer_imitation +
+				dataObj.social_benefits.privilege +
+				dataObj.social_benefits.core_belief +
+				dataObj.social_benefits.sense_of_belongingness;
+
+			var psychological_benefits = dataObj.psychological_benefits.pride +
+				dataObj.psychological_benefits.passion +
+				dataObj.psychological_benefits.surprise +
+				dataObj.psychological_benefits.pleasure +
+				dataObj.psychological_benefits.sensory_appeal +
+				dataObj.psychological_benefits.emotional_engagement +
+				dataObj.psychological_benefits.interests;
+
+			var opportunity_cost = dataObj.opportunity_cost.assistance +
+				dataObj.opportunity_cost.convenience +
+				dataObj.opportunity_cost.predictability +
+				dataObj.opportunity_cost.hassle_data +
+				dataObj.opportunity_cost.timeliness +
+				dataObj.opportunity_cost.reduction_of_uncertainity;
+
+			var monetary_cost = dataObj.monetary_cost.maintenance_cost + dataObj.monetary_cost.monetary_rewards;
+
+			var cvi = (functional_benefits + social_benefits + psychological_benefits) / (opportunity_cost + monetary_cost)
+
+			document.getElementById('cvi').innerHTML = cvi;
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				backgroundColor: "#2F3547",
+				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
+				title: {
+					text: "Functional Benefits",
+					fontColor: "#FFFFFF"
+				},
+				toolTip: {
+					backgroundColor: "#1E2333",
+					fontColor: "#FFFFFF"
+				},
+				axisX: {
+					labelFontColor: "#FFFFFF"
+				},
+				axisY: {
+					labelFontColor: "#FFFFFF"
+				},
+				dataPointWidth: 20,
+				width: 400,
+				data: [{
+					type: "column",
+					color: "white",
+					indexLabel: "{y}",
+					indexLabelFontColor: "#FFFFFF",
+					dataPoints: [
+						{ y: dataObj.functional_benefits.ease, label: "Ease" },
+						{ y: dataObj.functional_benefits.efficiency, label: "Efficiency" },
+						{ y: dataObj.functional_benefits.effectiveness, label: "Effectiveness" },
+						{ y: dataObj.functional_benefits.reliability, label: "Reliability" },
+						{ y: dataObj.functional_benefits.service_support, label: "Service Support" },
+						{ y: dataObj.functional_benefits.usability, label: "Usability" }
+					]
+				}]
+			});
+			chart.render();
+
+			var chart = new CanvasJS.Chart("chartContainerTwo", {
+				animationEnabled: true,
+				backgroundColor: "#2F3547",
+				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
+				title: {
+					text: "Functional Benefits",
+					fontColor: "#FFFFFF"
+				},
+				toolTip: {
+					backgroundColor: "#1E2333",
+					fontColor: "#FFFFFF"
+				},
+				axisX: {
+					labelFontColor: "#FFFFFF"
+				},
+				axisY: {
+					labelFontColor: "#FFFFFF"
+				},
+				dataPointWidth: 20,
+				width: 300,
+				data: [{
+					type: "column",
+					color: "white",
+					indexLabel: "{y}",
+					indexLabelFontColor: "#FFFFFF",
+					dataPoints: [
+						{ y: dataObj.social_benefits.familiarity, label: "Familiarity" },
+						{ y: dataObj.social_benefits.exclusiveness, label: "Exclusiveness" },
+						{ y: dataObj.social_benefits.peer_imitation, label: "Peer Imitation" },
+						{ y: dataObj.social_benefits.privilege, label: "Privilege" },
+						{ y: dataObj.social_benefits.core_belief, label: "Core Belief" },
+						{ y: dataObj.social_benefits.sense_of_belongingness, label: "Sense of Belongingness" }
+					]
+				}]
+			});
+			chart.render();
+
+
+			var chart = new CanvasJS.Chart("chartContainerThree", {
+				animationEnabled: true,
+				backgroundColor: "#2F3547",
+				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
+				title: {
+					text: "Functional Benefits",
+					fontColor: "#FFFFFF"
+				},
+				toolTip: {
+					backgroundColor: "#1E2333",
+					fontColor: "#FFFFFF"
+				},
+				axisX: {
+					labelFontColor: "#FFFFFF"
+				},
+				axisY: {
+					labelFontColor: "#FFFFFF"
+				},
+				dataPointWidth: 20,
+				width: 400,
+				data: [{
+					type: "column",
+					color: "white",
+					indexLabel: "{y}",
+					indexLabelFontColor: "#FFFFFF",
+					dataPoints: [
+						{ y: dataObj.psychological_benefits.pride, label: "Pride" },
+						{ y: dataObj.psychological_benefits.passion, label: "Passion" },
+						{ y: dataObj.psychological_benefits.surprise, label: "Surprise" },
+						{ y: dataObj.psychological_benefits.pleasure, label: "Pleasure" },
+						{ y: dataObj.psychological_benefits.sensory_appeal, label: "Sensory Appeal" },
+						{ y: dataObj.psychological_benefits.interests, label: "Interests" }
+					]
+				}]
+			});
+			chart.render();
+
+
+			var chart = new CanvasJS.Chart("chartContainerFour", {
+				animationEnabled: true,
+				backgroundColor: "#2F3547",
+				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
+				title: {
+					text: "Functional Benefits",
+					fontColor: "#FFFFFF"
+				},
+				toolTip: {
+					backgroundColor: "#1E2333",
+					fontColor: "#FFFFFF"
+				},
+				axisX: {
+					labelFontColor: "#FFFFFF"
+				},
+				axisY: {
+					labelFontColor: "#FFFFFF"
+				},
+				dataPointWidth: 20,
+				width: 600,
+				data: [{
+					type: "column",
+					color: "white",
+					indexLabel: "{y}",
+					indexLabelFontColor: "#FFFFFF",
+					dataPoints: [
+						{ y: dataObj.opportunity_cost.assistance, label: "Assistance" },
+						{ y: dataObj.opportunity_cost.convenience, label: "Convenience" },
+						{ y: dataObj.opportunity_cost.predictability, label: "Predictability" },
+						{ y: dataObj.opportunity_cost.hassle_data, label: "Hassle Data" },
+						{ y: dataObj.opportunity_cost.timeliness, label: "Timeliness" },
+						{ y: dataObj.opportunity_cost.reduction_of_uncertainity, label: "Reeduction of Uncertainity" }
+					]
+				}]
+			});
+			chart.render();
+
+
+			var chart = new CanvasJS.Chart("chartContainerFive", {
+				animationEnabled: true,
+				backgroundColor: "#2F3547",
+				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
+				title: {
+					text: "Functional Benefits",
+					fontColor: "#FFFFFF"
+				},
+				toolTip: {
+					backgroundColor: "#1E2333",
+					fontColor: "#FFFFFF"
+				},
+				axisX: {
+					labelFontColor: "#FFFFFF"
+				},
+				axisY: {
+					labelFontColor: "#FFFFFF"
+				},
+				dataPointWidth: 20,
+				width: 200,
+				data: [{
+					type: "column",
+					color: "white",
+					indexLabel: "{y}",
+					indexLabelFontColor: "#FFFFFF",
+					dataPoints: [
+						{ y: dataObj.monetary_cost.monetary_rewards, label: "Monetary Rewards" },
+						{ y: dataObj.monetary_cost.maintenance_cost, label: "Maintenance" }
+					]
+				}]
+			});
+			chart.render();
+
+
+		}	
+	</script>
+</head>
+
+<body>
+
+	<div class="cvi-class">
+		Customer Value=
+		<span id="cvi"></span>
+
+		<div class="tooltip">?
+			<span class="tooltiptext">Customer Value= (Functional Benefits+ Social Benefits+ Psychological Benefits)/(Opportunity Cost+ Monetary Cost)</span>
+		</div>
+	</div>
+
+	<div id="chartContainer" style="height: 370px;" class="chart-class"></div>
+	<div id="chartContainerTwo" style="height: 370px;" class="chart-class"></div>
+	<div id="chartContainerThree" style="height: 370px;" class="chart-class"></div>
+	<div id="chartContainerFour" style="height: 370px;" class="chart-class"></div>
+	<div id="chartContainerFive" style="height: 370px;" class="chart-class"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>
