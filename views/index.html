@@ -28,7 +28,7 @@
 			display: flex;
 			flex-direction: row;
 			align-content: flex-end;
-			justify-content: center; 
+			justify-content: center;
 		}
 
 		.tooltip {
@@ -61,44 +61,87 @@
 		window.onload = function () {
 			var dataObj = {
 				"functional_benefits": {
-					"ease": 1.2,
-					"efficiency": 1.2,
-					"effectiveness": 1.2,
-					"usability": 2,
+					"ease": 6,
+					"efficiency": 6,
+					"effectiveness": 4,
+					"usability": 8,
 					"reliability": 2,
-					"service_support": 2
+					"service_support": 8
 				},
 				"social_benefits": {
-					"familiarity": 1.20,
-					"exclusiveness": 1.2,
-					"peer_imitation": 4,
-					"privilege": 1.2,
-					"core_belief": 4,
-					"sense_of_belongingness": 4
+					"familiarity": 8,
+					"exclusiveness": 6,
+					"peer_imitation": 8,
+					"privilege": 4,
+					"core_belief": 2,
+					"sense_of_belongingness": 6
 				},
 				"psychological_benefits": {
-					"pride": 1.2,
+					"pride": 8,
 					"passion": 4,
-					"surprise": 1.2,
-					"pleasure": 1.2,
-					"sensory_appeal": 1.2,
-					"emotional_engagement": 6,
-					"interests": 1.20,
+					"surprise": 6,
+					"pleasure": 8,
+					"sensory_appeal": 6,
+					"emotional_engagement": 4,
+					"interests": 8,
 
 				},
 				"opportunity_cost": {
 					"assistance": 10,
-					"convenience": 1.2,
-					"predictability": 1.2,
+					"convenience": 4,
+					"predictability": 6,
 					"hassle_data": 2,
-					"timeliness": 1.2,
-					"reduction_of_uncertainity": 1.2
+					"timeliness": 4,
+					"reduction_of_uncertainity": 4
 				},
 				"monetary_cost": {
-					"monetary_rewards": 1.2,
-					"maintenance_cost": 2
+					"monetary_rewards": 4,
+					"maintenance_cost": 6
 				}
 			};
+
+			var dataObjTwo =  {
+				"functional_benefits": {
+					"ease": 8,
+					"efficiency": 7,
+					"effectiveness": 4,
+					"usability": 8,
+					"reliability": 10,
+					"service_support": 9
+				},
+				"social_benefits": {
+					"familiarity": 8,
+					"exclusiveness": 9,
+					"peer_imitation": 10,
+					"privilege": 8,
+					"core_belief": 7,
+					"sense_of_belongingness": 8
+				},
+				"psychological_benefits": {
+					"pride": 7,
+					"passion": 8,
+					"surprise": 9,
+					"pleasure": 10,
+					"sensory_appeal": 9,
+					"emotional_engagement": 7,
+					"interests": 8
+
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 7,
+					"predictability": 10,
+					"hassle_data": 9,
+					"timeliness": 8,
+					"reduction_of_uncertainity": 8
+				},
+				"monetary_cost": {
+					"monetary_rewards": 9,
+					"maintenance_cost": 8
+				}
+			};
+
+			dataObj = dataObjTwo;
 
 			var functional_benefits = dataObj.functional_benefits.ease + dataObj.functional_benefits.effectiveness +
 				dataObj.functional_benefits.efficiency +
@@ -130,7 +173,10 @@
 
 			var monetary_cost = dataObj.monetary_cost.maintenance_cost + dataObj.monetary_cost.monetary_rewards;
 
-			var cvi = (functional_benefits + social_benefits + psychological_benefits) / (opportunity_cost + monetary_cost).toFixed(2);
+			//formula
+
+			var cvi = (((functional_benefits / 10 + social_benefits / 10 + psychological_benefits / 10) / 19) / (1.1 - ((opportunity_cost / 10 + monetary_cost / 10) / 8))).toFixed(2);
+
 
 			document.getElementById('cvi').innerHTML = cvi;
 
