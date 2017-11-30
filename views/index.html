@@ -10,6 +10,8 @@
 
 		.chart-class {
 			margin-bottom: 10px;
+			display: inline-block;
+			margin-right: 10px;
 		}
 
 		.cvi-class {
@@ -33,12 +35,13 @@
 		.tooltip .tooltiptext {
 			visibility: hidden;
 			width: 300px;
+			background-color: #2F3547;
 			border: 1px dotted #FFF;
 			color: #fff;
 			text-align: center;
 			border-radius: 6px;
 			padding: 5px 0;
-
+			font-size: 0.5em;
 			/* Position the tooltip */
 			position: absolute;
 			z-index: 1;
@@ -121,7 +124,7 @@
 
 			var monetary_cost = dataObj.monetary_cost.maintenance_cost + dataObj.monetary_cost.monetary_rewards;
 
-			var cvi = (functional_benefits + social_benefits + psychological_benefits) / (opportunity_cost + monetary_cost)
+			var cvi = (functional_benefits + social_benefits + psychological_benefits) / (opportunity_cost + monetary_cost).toFixed(2);
 
 			document.getElementById('cvi').innerHTML = cvi;
 
@@ -167,7 +170,7 @@
 				backgroundColor: "#2F3547",
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
-					text: "Functional Benefits",
+					text: "Social Benefits",
 					fontColor: "#FFFFFF"
 				},
 				toolTip: {
@@ -205,7 +208,7 @@
 				backgroundColor: "#2F3547",
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
-					text: "Functional Benefits",
+					text: "Psychological Benefits",
 					fontColor: "#FFFFFF"
 				},
 				toolTip: {
@@ -243,7 +246,7 @@
 				backgroundColor: "#2F3547",
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
-					text: "Functional Benefits",
+					text: "Opportunity Cost",
 					fontColor: "#FFFFFF"
 				},
 				toolTip: {
@@ -281,7 +284,7 @@
 				backgroundColor: "#2F3547",
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
-					text: "Functional Benefits",
+					text: "Monetary Cost",
 					fontColor: "#FFFFFF"
 				},
 				toolTip: {
@@ -325,11 +328,11 @@
 		</div>
 	</div>
 
-	<div id="chartContainer" style="height: 370px;" class="chart-class"></div>
-	<div id="chartContainerTwo" style="height: 370px;" class="chart-class"></div>
-	<div id="chartContainerThree" style="height: 370px;" class="chart-class"></div>
-	<div id="chartContainerFour" style="height: 370px;" class="chart-class"></div>
-	<div id="chartContainerFive" style="height: 370px;" class="chart-class"></div>
+	<div id="chartContainer" style="height: 370px; width: 400px" class="chart-class"></div>
+	<div id="chartContainerTwo" style="height: 370px; width: 300px" class="chart-class"></div>
+	<div id="chartContainerThree" style="height: 370px; width: 400px" class="chart-class"></div>
+	<div id="chartContainerFour" style="height: 370px; width: 600px" class="chart-class"></div>
+	<div id="chartContainerFive" style="height: 370px; width: 200px" class="chart-class"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
