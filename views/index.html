@@ -20,28 +20,34 @@
 			color: #ffffff;
 			width: 100%;
 			text-align: center;
-			height: 100px;
+			height: 60px;
 			margin-bottom: 20px;
-			padding-top: 50px;
-			border-radius: 20px;
+			padding-top: 25px;
+			border-radius: 5px;
 			font-size: 2em;
+			display: flex;
+			flex-direction: row;
+			align-content: flex-end;
+			justify-content: center; 
 		}
 
 		.tooltip {
 			position: relative;
 			display: inline-block;
+			font-size: .5em;
+			padding: 4px;
 		}
 
 		.tooltip .tooltiptext {
 			visibility: hidden;
-			width: 300px;
+			width: 320px;
 			background-color: #2F3547;
 			border: 1px dotted #FFF;
 			color: #fff;
 			text-align: center;
 			border-radius: 6px;
-			padding: 5px 0;
-			font-size: 0.5em;
+			padding: 5px;
+			font-size: .8em;
 			/* Position the tooltip */
 			position: absolute;
 			z-index: 1;
@@ -134,7 +140,9 @@
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
 					text: "Functional Benefits",
-					fontColor: "#FFFFFF"
+					fontColor: "#FFFFFF",
+					fontSize: 18,
+					fontFamily: "Arial"
 				},
 				toolTip: {
 					backgroundColor: "#1E2333",
@@ -147,7 +155,7 @@
 					labelFontColor: "#FFFFFF"
 				},
 				dataPointWidth: 20,
-				width: 400,
+				width: 600,
 				data: [{
 					type: "column",
 					color: "white",
@@ -171,7 +179,9 @@
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
 					text: "Social Benefits",
-					fontColor: "#FFFFFF"
+					fontColor: "#FFFFFF",
+					fontSize: 18,
+					fontFamily: "Arial"
 				},
 				toolTip: {
 					backgroundColor: "#1E2333",
@@ -184,7 +194,7 @@
 					labelFontColor: "#FFFFFF"
 				},
 				dataPointWidth: 20,
-				width: 300,
+				width: 615,
 				data: [{
 					type: "column",
 					color: "white",
@@ -209,7 +219,9 @@
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
 					text: "Psychological Benefits",
-					fontColor: "#FFFFFF"
+					fontColor: "#FFFFFF",
+					fontSize: 18,
+					fontFamily: "Arial"
 				},
 				toolTip: {
 					backgroundColor: "#1E2333",
@@ -247,7 +259,9 @@
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
 					text: "Opportunity Cost",
-					fontColor: "#FFFFFF"
+					fontColor: "#FFFFFF",
+					fontSize: 18,
+					fontFamily: "Arial"
 				},
 				toolTip: {
 					backgroundColor: "#1E2333",
@@ -285,7 +299,9 @@
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
 				title: {
 					text: "Monetary Cost",
-					fontColor: "#FFFFFF"
+					fontColor: "#FFFFFF",
+					fontSize: 18,
+					fontFamily: "Arial"
 				},
 				toolTip: {
 					backgroundColor: "#1E2333",
@@ -319,17 +335,19 @@
 
 <body>
 
-	<div class="cvi-class" >
-		Customer Value=
-		<span id="cvi"></span>
-
-		<div class="tooltip">?
+	<div class="cvi-class">
+		<div>
+			<span> Customer Value = </span>
+			<span id="cvi"></span>
+		</div>
+		<div class="tooltip">
+			<span style="border: 1px solid white; border-radius: 50%; padding: 2px 7px;">?</span>
 			<span class="tooltiptext">Customer Value= (Functional Benefits+ Social Benefits+ Psychological Benefits)/(Opportunity Cost+ Monetary Cost)</span>
 		</div>
 	</div>
 
-	<div id="chartContainer" style="height: 370px; width: 400px" class="chart-class"></div>
-	<div id="chartContainerTwo" style="height: 370px; width: 300px" class="chart-class"></div>
+	<div id="chartContainer" style="height: 370px; width: 600px" class="chart-class"></div>
+	<div id="chartContainerTwo" style="height: 370px; width: 615px" class="chart-class"></div>
 	<div id="chartContainerThree" style="height: 370px; width: 400px" class="chart-class"></div>
 	<div id="chartContainerFour" style="height: 370px; width: 600px" class="chart-class"></div>
 	<div id="chartContainerFive" style="height: 370px; width: 200px" class="chart-class"></div>
