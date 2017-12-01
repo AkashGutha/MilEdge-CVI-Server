@@ -508,7 +508,9 @@
 				cvi[i] = (((functional_benefits[i] / 10 + social_benefits[i] / 10 + psychological_benefits[i] / 10) / 19) / (1.1 - ((opportunity_cost[i] / 10 + monetary_cost[i] / 10) / 8))).toFixed(2);
 			}
 
-			document.getElementById('cvi').innerHTML = cvi[cvi.length - 1]
+			document.getElementById('cvi').innerHTML = 0;
+
+
 
 			var chart = new CanvasJS.Chart("chartContainer", {
 				animationEnabled: true,
@@ -749,6 +751,7 @@
 				dataPoint.push({ y: data })
 				console.log(dataPoint)
 				chart.render();
+				document.getElementById('cvi').innerHTML = data;
 				setTimeout(updateData, 10000);
 			}
 
@@ -764,7 +767,7 @@
 			//Live bar example
 
 
-			
+
 
 		}	
 	</script>
