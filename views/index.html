@@ -11,6 +11,8 @@
 		.chart-class {
 			margin-bottom: 10px;
 			display: inline-block;
+		}
+		.chart-margin {
 			margin-right: 10px;
 		}
 
@@ -59,126 +61,454 @@
 	</style>
 	<script>
 		window.onload = function () {
-			var dataObj = {
+			var dataArray = [{
 				"functional_benefits": {
-					"ease": 6,
-					"efficiency": 6,
-					"effectiveness": 4,
-					"usability": 8,
-					"reliability": 2,
-					"service_support": 8
+					"ease": 1,
+					"efficiency": 1,
+					"effectiveness": 1,
+					"usability": 1,
+					"reliability": 1,
+					"service_support": 1
 				},
 				"social_benefits": {
-					"familiarity": 8,
+					"familiarity": 1,
+					"exclusiveness": 1,
+					"peer_imitation": 1,
+					"privilege": 1,
+					"core_belief": 1,
+					"sense_of_belongingness": 1
+				},
+				"psychological_benefits": {
+					"pride": 1,
+					"passion": 1,
+					"surprise": 1,
+					"pleasure": 1,
+					"sensory_appeal": 1,
+					"emotional_engagement": 1,
+					"interests": 1
+				},
+				"opportunity_cost": {
+					"assistance": 1,
+					"convenience": 1,
+					"predictability": 1,
+					"hassle_data": 1,
+					"timeliness": 1,
+					"reduction_of_uncertainity": 1
+				},
+				"monetary_cost": {
+					"monetary_rewards": 1,
+					"maintenance_cost": 1
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 1,
+					"efficiency": 1,
+					"effectiveness": 1,
+					"usability": 1,
+					"reliability": 1,
+					"service_support": 1
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 1,
+					"peer_imitation": 1,
+					"privilege": 1,
+					"core_belief": 1,
+					"sense_of_belongingness": 4
+				},
+				"psychological_benefits": {
+					"pride": 1,
+					"passion": 1,
+					"surprise": 1,
+					"pleasure": 1,
+					"sensory_appeal": 1,
+					"emotional_engagement": 4,
+					"interests": 1
+				},
+				"opportunity_cost": {
+					"assistance": 1,
+					"convenience": 1,
+					"predictability": 1,
+					"hassle_data": 1,
+					"timeliness": 1,
+					"reduction_of_uncertainity": 1
+				},
+				"monetary_cost": {
+					"monetary_rewards": 1,
+					"maintenance_cost": 1
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 1,
+					"efficiency": 1,
+					"effectiveness": 1,
+					"usability": 2,
+					"reliability": 2,
+					"service_support": 2
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 1,
+					"peer_imitation": 4,
+					"privilege": 1,
+					"core_belief": 4,
+					"sense_of_belongingness": 4
+				},
+				"psychological_benefits": {
+					"pride": 1,
+					"passion": 4,
+					"surprise": 1,
+					"pleasure": 1,
+					"sensory_appeal": 1,
+					"emotional_engagement": 6,
+					"interests": 10
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 1,
+					"predictability": 1,
+					"hassle_data": 2,
+					"timeliness": 1,
+					"reduction_of_uncertainity": 1
+				},
+				"monetary_cost": {
+					"monetary_rewards": 1,
+					"maintenance_cost": 2
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 1,
+					"efficiency": 1,
+					"effectiveness": 1,
+					"usability": 2,
+					"reliability": 2,
+					"service_support": 2
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 1,
+					"peer_imitation": 4,
+					"privilege": 1,
+					"core_belief": 4,
+					"sense_of_belongingness": 4
+				},
+				"psychological_benefits": {
+					"pride": 1,
+					"passion": 4,
+					"surprise": 1,
+					"pleasure": 1,
+					"sensory_appeal": 1,
+					"emotional_engagement": 6,
+					"interests": 10
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 1,
+					"predictability": 1,
+					"hassle_data": 2,
+					"timeliness": 1,
+					"reduction_of_uncertainity": 1
+				},
+				"monetary_cost": {
+					"monetary_rewards": 1,
+					"maintenance_cost": 2
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 10,
+					"efficiency": 4,
+					"effectiveness": 1,
+					"usability": 2,
+					"reliability": 2,
+					"service_support": 2
+				},
+				"social_benefits": {
+					"familiarity": 10,
 					"exclusiveness": 6,
-					"peer_imitation": 8,
-					"privilege": 4,
-					"core_belief": 2,
-					"sense_of_belongingness": 6
+					"peer_imitation": 4,
+					"privilege": 10,
+					"core_belief": 4,
+					"sense_of_belongingness": 10
+				},
+				"psychological_benefits": {
+					"pride": 6,
+					"passion": 4,
+					"surprise": 10,
+					"pleasure": 4,
+					"sensory_appeal": 4,
+					"emotional_engagement": 6,
+					"interests": 10
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 10,
+					"predictability": 8,
+					"hassle_data": 2,
+					"timeliness": 4,
+					"reduction_of_uncertainity": 10
+				},
+				"monetary_cost": {
+					"monetary_rewards": 10,
+					"maintenance_cost": 2
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 10,
+					"efficiency": 10,
+					"effectiveness": 1,
+					"usability": 4,
+					"reliability": 4,
+					"service_support": 4
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 6,
+					"peer_imitation": 4,
+					"privilege": 10,
+					"core_belief": 4,
+					"sense_of_belongingness": 10
+				},
+				"psychological_benefits": {
+					"pride": 6,
+					"passion": 4,
+					"surprise": 10,
+					"pleasure": 6,
+					"sensory_appeal": 4,
+					"emotional_engagement": 6,
+					"interests": 10
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 10,
+					"predictability": 8,
+					"hassle_data": 10,
+					"timeliness": 10,
+					"reduction_of_uncertainity": 10
+				},
+				"monetary_cost": {
+					"monetary_rewards": 10,
+					"maintenance_cost": 4
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 10,
+					"efficiency": 10,
+					"effectiveness": 1,
+					"usability": 4,
+					"reliability": 4,
+					"service_support": 4
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 6,
+					"peer_imitation": 4,
+					"privilege": 10,
+					"core_belief": 4,
+					"sense_of_belongingness": 10
+				},
+				"psychological_benefits": {
+					"pride": 6,
+					"passion": 4,
+					"surprise": 10,
+					"pleasure": 6,
+					"sensory_appeal": 4,
+					"emotional_engagement": 6,
+					"interests": 10
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 10,
+					"predictability": 8,
+					"hassle_data": 10,
+					"timeliness": 10,
+					"reduction_of_uncertainity": 10
+				},
+				"monetary_cost": {
+					"monetary_rewards": 10,
+					"maintenance_cost": 4
+				}
+			},
+			{
+				"functional_benefits": {
+					"ease": 10,
+					"efficiency": 10,
+					"effectiveness": 1,
+					"usability": 4,
+					"reliability": 4,
+					"service_support": 4
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 10,
+					"peer_imitation": 4,
+					"privilege": 10,
+					"core_belief": 4,
+					"sense_of_belongingness": 10
 				},
 				"psychological_benefits": {
 					"pride": 8,
 					"passion": 4,
-					"surprise": 6,
-					"pleasure": 8,
+					"surprise": 10,
+					"pleasure": 6,
 					"sensory_appeal": 6,
-					"emotional_engagement": 4,
-					"interests": 8,
-
+					"emotional_engagement": 10,
+					"interests": 10
 				},
 				"opportunity_cost": {
 					"assistance": 10,
-					"convenience": 4,
-					"predictability": 6,
-					"hassle_data": 2,
-					"timeliness": 4,
-					"reduction_of_uncertainity": 4
+					"convenience": 10,
+					"predictability": 8,
+					"hassle_data": 10,
+					"timeliness": 10,
+					"reduction_of_uncertainity": 10
 				},
 				"monetary_cost": {
-					"monetary_rewards": 4,
-					"maintenance_cost": 6
+					"monetary_rewards": 10,
+					"maintenance_cost": 4
 				}
-			};
-
-			var dataObjTwo =  {
+			},
+			{
 				"functional_benefits": {
-					"ease": 8,
-					"efficiency": 7,
-					"effectiveness": 4,
-					"usability": 8,
-					"reliability": 10,
-					"service_support": 9
+					"ease": 10,
+					"efficiency": 10,
+					"effectiveness": 1,
+					"usability": 4,
+					"reliability": 4,
+					"service_support": 4
 				},
 				"social_benefits": {
-					"familiarity": 8,
-					"exclusiveness": 9,
-					"peer_imitation": 10,
-					"privilege": 8,
-					"core_belief": 7,
-					"sense_of_belongingness": 8
+					"familiarity": 10,
+					"exclusiveness": 10,
+					"peer_imitation": 4,
+					"privilege": 10,
+					"core_belief": 4,
+					"sense_of_belongingness": 10
 				},
 				"psychological_benefits": {
-					"pride": 7,
-					"passion": 8,
-					"surprise": 9,
-					"pleasure": 10,
-					"sensory_appeal": 9,
-					"emotional_engagement": 7,
-					"interests": 8
-
+					"pride": 8,
+					"passion": 4,
+					"surprise": 10,
+					"pleasure": 6,
+					"sensory_appeal": 6,
+					"emotional_engagement": 10,
+					"interests": 10
 				},
 				"opportunity_cost": {
 					"assistance": 10,
-					"convenience": 7,
-					"predictability": 10,
-					"hassle_data": 9,
-					"timeliness": 8,
-					"reduction_of_uncertainity": 8
+					"convenience": 10,
+					"predictability": 8,
+					"hassle_data": 10,
+					"timeliness": 10,
+					"reduction_of_uncertainity": 10
 				},
 				"monetary_cost": {
-					"monetary_rewards": 9,
-					"maintenance_cost": 8
+					"monetary_rewards": 10,
+					"maintenance_cost": 4
 				}
-			};
+			},
+			{
+				"functional_benefits": {
+					"ease": 10,
+					"efficiency": 10,
+					"effectiveness": 1,
+					"usability": 4,
+					"reliability": 4,
+					"service_support": 4
+				},
+				"social_benefits": {
+					"familiarity": 10,
+					"exclusiveness": 10,
+					"peer_imitation": 4,
+					"privilege": 10,
+					"core_belief": 4,
+					"sense_of_belongingness": 10
+				},
+				"psychological_benefits": {
+					"pride": 10,
+					"passion": 4,
+					"surprise": 10,
+					"pleasure": 6,
+					"sensory_appeal": 6,
+					"emotional_engagement": 10,
+					"interests": 10
+				},
+				"opportunity_cost": {
+					"assistance": 10,
+					"convenience": 10,
+					"predictability": 8,
+					"hassle_data": 10,
+					"timeliness": 10,
+					"reduction_of_uncertainity": 10
+				},
+				"monetary_cost": {
+					"monetary_rewards": 10,
+					"maintenance_cost": 4
+				}
+			}]
 
-			dataObj = dataObjTwo;
+			var functional_benefits = []
+			for (var i = 0; i < dataArray.length; i++) {
+				functional_benefits[i] = dataArray[i].functional_benefits.ease + dataArray[i].functional_benefits.effectiveness +
+					dataArray[i].functional_benefits.efficiency +
+					dataArray[i].functional_benefits.usability +
+					dataArray[i].functional_benefits.reliability +
+					dataArray[i].functional_benefits.service_support;
+			}
 
-			var functional_benefits = dataObj.functional_benefits.ease + dataObj.functional_benefits.effectiveness +
-				dataObj.functional_benefits.efficiency +
-				dataObj.functional_benefits.usability +
-				dataObj.functional_benefits.reliability +
-				dataObj.functional_benefits.service_support;
+			var social_benefits = [];
+			for (var i = 0; i < dataArray.length; i++) {
+				social_benefits[i] = dataArray[i].social_benefits.familiarity +
+					dataArray[i].social_benefits.exclusiveness +
+					dataArray[i].social_benefits.peer_imitation +
+					dataArray[i].social_benefits.privilege +
+					dataArray[i].social_benefits.core_belief +
+					dataArray[i].social_benefits.sense_of_belongingness;
 
-			var social_benefits = dataObj.social_benefits.familiarity +
-				dataObj.social_benefits.exclusiveness +
-				dataObj.social_benefits.peer_imitation +
-				dataObj.social_benefits.privilege +
-				dataObj.social_benefits.core_belief +
-				dataObj.social_benefits.sense_of_belongingness;
+			}
 
-			var psychological_benefits = dataObj.psychological_benefits.pride +
-				dataObj.psychological_benefits.passion +
-				dataObj.psychological_benefits.surprise +
-				dataObj.psychological_benefits.pleasure +
-				dataObj.psychological_benefits.sensory_appeal +
-				dataObj.psychological_benefits.emotional_engagement +
-				dataObj.psychological_benefits.interests;
+			var psychological_benefits = [];
+			for (var i = 0; i < dataArray.length; i++) {
+				psychological_benefits[i] = dataArray[i].psychological_benefits.pride +
+					dataArray[i].psychological_benefits.passion +
+					dataArray[i].psychological_benefits.surprise +
+					dataArray[i].psychological_benefits.pleasure +
+					dataArray[i].psychological_benefits.sensory_appeal +
+					dataArray[i].psychological_benefits.emotional_engagement +
+					dataArray[i].psychological_benefits.interests;
+			}
 
-			var opportunity_cost = dataObj.opportunity_cost.assistance +
-				dataObj.opportunity_cost.convenience +
-				dataObj.opportunity_cost.predictability +
-				dataObj.opportunity_cost.hassle_data +
-				dataObj.opportunity_cost.timeliness +
-				dataObj.opportunity_cost.reduction_of_uncertainity;
+			var opportunity_cost = [];
 
-			var monetary_cost = dataObj.monetary_cost.maintenance_cost + dataObj.monetary_cost.monetary_rewards;
+			for (var i = 0; i < dataArray.length; i++) {
+				opportunity_cost[i] = dataArray[i].opportunity_cost.assistance +
+					dataArray[i].opportunity_cost.convenience +
+					dataArray[i].opportunity_cost.predictability +
+					dataArray[i].opportunity_cost.hassle_data +
+					dataArray[i].opportunity_cost.timeliness +
+					dataArray[i].opportunity_cost.reduction_of_uncertainity;
+			}
+
+			var monetary_cost = [];
+			for (var i = 0; i < dataArray.length; i++) {
+				monetary_cost[i] = dataArray[i].monetary_cost.maintenance_cost + dataArray[i].monetary_cost.monetary_rewards;
+			}
 
 			//formula
 
-			var cvi = (((functional_benefits / 10 + social_benefits / 10 + psychological_benefits / 10) / 19) / (1.1 - ((opportunity_cost / 10 + monetary_cost / 10) / 8))).toFixed(2);
+			var cvi = [];
 
+			for (var i = 0; i < dataArray.length; i++) {
+				cvi[i] = (((functional_benefits[i] / 10 + social_benefits[i] / 10 + psychological_benefits[i] / 10) / 19) / (1.1 - ((opportunity_cost[i] / 10 + monetary_cost[i] / 10) / 8))).toFixed(2);
+			}
 
-			document.getElementById('cvi').innerHTML = cvi;
+			console.log(psychological_benefits)
+			document.getElementById('cvi').innerHTML = cvi[cvi.length - 1]
 
 			var chart = new CanvasJS.Chart("chartContainer", {
 				animationEnabled: true,
@@ -201,19 +531,19 @@
 					labelFontColor: "#FFFFFF"
 				},
 				dataPointWidth: 20,
-				width: 600,
+				width: 774,
 				data: [{
 					type: "column",
 					color: "white",
 					indexLabel: "{y}",
 					indexLabelFontColor: "#FFFFFF",
 					dataPoints: [
-						{ y: dataObj.functional_benefits.ease, label: "Ease" },
-						{ y: dataObj.functional_benefits.efficiency, label: "Efficiency" },
-						{ y: dataObj.functional_benefits.effectiveness, label: "Effectiveness" },
-						{ y: dataObj.functional_benefits.reliability, label: "Reliability" },
-						{ y: dataObj.functional_benefits.service_support, label: "Service Support" },
-						{ y: dataObj.functional_benefits.usability, label: "Usability" }
+						{ y: dataArray[cvi.length - 1].functional_benefits.ease, label: "Ease" },
+						{ y: dataArray[cvi.length - 1].functional_benefits.efficiency, label: "Efficiency" },
+						{ y: dataArray[cvi.length - 1].functional_benefits.effectiveness, label: "Effectiveness" },
+						{ y: dataArray[cvi.length - 1].functional_benefits.reliability, label: "Reliability" },
+						{ y: dataArray[cvi.length - 1].functional_benefits.service_support, label: "Service Support" },
+						{ y: dataArray[cvi.length - 1].functional_benefits.usability, label: "Usability" }
 					]
 				}]
 			});
@@ -240,19 +570,19 @@
 					labelFontColor: "#FFFFFF"
 				},
 				dataPointWidth: 20,
-				width: 615,
+				width: 915,
 				data: [{
 					type: "column",
 					color: "white",
 					indexLabel: "{y}",
 					indexLabelFontColor: "#FFFFFF",
 					dataPoints: [
-						{ y: dataObj.social_benefits.familiarity, label: "Familiarity" },
-						{ y: dataObj.social_benefits.exclusiveness, label: "Exclusiveness" },
-						{ y: dataObj.social_benefits.peer_imitation, label: "Peer Imitation" },
-						{ y: dataObj.social_benefits.privilege, label: "Privilege" },
-						{ y: dataObj.social_benefits.core_belief, label: "Core Belief" },
-						{ y: dataObj.social_benefits.sense_of_belongingness, label: "Sense of Belongingness" }
+						{ y: dataArray[cvi.length - 1].social_benefits.familiarity, label: "Familiarity" },
+						{ y: dataArray[cvi.length - 1].social_benefits.exclusiveness, label: "Exclusiveness" },
+						{ y: dataArray[cvi.length - 1].social_benefits.peer_imitation, label: "Peer Imitation" },
+						{ y: dataArray[cvi.length - 1].social_benefits.privilege, label: "Privilege" },
+						{ y: dataArray[cvi.length - 1].social_benefits.core_belief, label: "Core Belief" },
+						{ y: dataArray[cvi.length - 1].social_benefits.sense_of_belongingness, label: "Sense of Belongingness" }
 					]
 				}]
 			});
@@ -280,19 +610,20 @@
 					labelFontColor: "#FFFFFF"
 				},
 				dataPointWidth: 20,
-				width: 400,
+				width: 774,
 				data: [{
 					type: "column",
 					color: "white",
 					indexLabel: "{y}",
 					indexLabelFontColor: "#FFFFFF",
 					dataPoints: [
-						{ y: dataObj.psychological_benefits.pride, label: "Pride" },
-						{ y: dataObj.psychological_benefits.passion, label: "Passion" },
-						{ y: dataObj.psychological_benefits.surprise, label: "Surprise" },
-						{ y: dataObj.psychological_benefits.pleasure, label: "Pleasure" },
-						{ y: dataObj.psychological_benefits.sensory_appeal, label: "Sensory Appeal" },
-						{ y: dataObj.psychological_benefits.interests, label: "Interests" }
+						{ y: dataArray[cvi.length - 1].psychological_benefits.pride, label: "Pride" },
+						{ y: dataArray[cvi.length - 1].psychological_benefits.passion, label: "Passion" },
+						{ y: dataArray[cvi.length - 1].psychological_benefits.surprise, label: "Surprise" },
+						{ y: dataArray[cvi.length - 1].psychological_benefits.pleasure, label: "Pleasure" },
+						{ y: dataArray[cvi.length - 1].psychological_benefits.sensory_appeal, label: "Sensory Appeal" },
+						{ y: dataArray[cvi.length - 1].psychological_benefits.emotional_engagement, label: "Emotional Engagement" },
+						{ y: dataArray[cvi.length - 1].psychological_benefits.interests, label: "Interests" }
 					]
 				}]
 			});
@@ -320,19 +651,19 @@
 					labelFontColor: "#FFFFFF"
 				},
 				dataPointWidth: 20,
-				width: 600,
+				width: 700,
 				data: [{
 					type: "column",
 					color: "white",
 					indexLabel: "{y}",
 					indexLabelFontColor: "#FFFFFF",
 					dataPoints: [
-						{ y: dataObj.opportunity_cost.assistance, label: "Assistance" },
-						{ y: dataObj.opportunity_cost.convenience, label: "Convenience" },
-						{ y: dataObj.opportunity_cost.predictability, label: "Predictability" },
-						{ y: dataObj.opportunity_cost.hassle_data, label: "Hassle Data" },
-						{ y: dataObj.opportunity_cost.timeliness, label: "Timeliness" },
-						{ y: dataObj.opportunity_cost.reduction_of_uncertainity, label: "Reeduction of Uncertainity" }
+						{ y: dataArray[cvi.length - 1].opportunity_cost.assistance, label: "Assistance" },
+						{ y: dataArray[cvi.length - 1].opportunity_cost.convenience, label: "Convenience" },
+						{ y: dataArray[cvi.length - 1].opportunity_cost.predictability, label: "Predictability" },
+						{ y: dataArray[cvi.length - 1].opportunity_cost.hassle_data, label: "Hassle Data" },
+						{ y: dataArray[cvi.length - 1].opportunity_cost.timeliness, label: "Timeliness" },
+						{ y: dataArray[cvi.length - 1].opportunity_cost.reduction_of_uncertainity, label: "Reeduction of Uncertainity" }
 					]
 				}]
 			});
@@ -367,13 +698,55 @@
 					indexLabel: "{y}",
 					indexLabelFontColor: "#FFFFFF",
 					dataPoints: [
-						{ y: dataObj.monetary_cost.monetary_rewards, label: "Monetary Rewards" },
-						{ y: dataObj.monetary_cost.maintenance_cost, label: "Maintenance" }
+						{ y: dataArray[cvi.length - 1].monetary_cost.monetary_rewards, label: "Monetary Rewards" },
+						{ y: dataArray[cvi.length - 1].monetary_cost.maintenance_cost, label: "Maintenance" }
 					]
 				}]
 			});
 			chart.render();
+			console.log(cvi.length)
+			var chart = new CanvasJS.Chart("lineChartContainer", {
+				animationEnabled: true,
+				backgroundColor: "#2F3547",
+				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
+				title: {
+					text: "Customer Value Index ",
+					fontColor: "#FFFFFF",
+					fontSize: 18,
+					fontFamily: "Arial"
+				},
+				toolTip: {
+					backgroundColor: "#1E2333",
+					fontColor: "#FFFFFF"
+				},
+				axisX: {
+					labelFontColor: "#FFFFFF",
+					title: "Steps",
+					titleFontColor: "#FFFFFF"
+				},
+				axisY: {
+					labelFontColor: "#FFFFFF",
+					title: "CVI value",
+					titleFontColor: "#FFFFFF"
+				},
+				data: [{
+					type: "line",
+					dataPoints: [
+						{ y: parseFloat(cvi[0]) },
+						{ y: parseFloat(cvi[1]) },
+						{ y: parseFloat(cvi[2]) },
+						{ y: parseFloat(cvi[3]) },
+						{ y: parseFloat(cvi[4]) },
+						{ y: parseFloat(cvi[5]) },
+						{ y: parseFloat(cvi[6]) },
+						{ y: parseFloat(cvi[7]) },
+						{ y: parseFloat(cvi[8]) },
+						{ y: parseFloat(cvi[9]) }
 
+					]
+				}]
+			});
+			chart.render();
 
 		}	
 	</script>
@@ -392,12 +765,17 @@
 		</div>
 	</div>
 
-	<div id="chartContainer" style="height: 370px; width: 600px" class="chart-class"></div>
-	<div id="chartContainerTwo" style="height: 370px; width: 615px" class="chart-class"></div>
-	<div id="chartContainerThree" style="height: 370px; width: 400px" class="chart-class"></div>
-	<div id="chartContainerFour" style="height: 370px; width: 600px" class="chart-class"></div>
+	<div id="lineChartContainer" style="height: 370px; width: 100%;" class="chart-class"></div>
+
+	<div id="chartContainer" style="height: 370px; width: 774px" class="chart-class chart-margin"></div>
+	<div id="chartContainerTwo" style="height: 370px; width: 915px" class="chart-class"></div>
+	<div id="chartContainerThree" style="height: 370px; width: 774px" class="chart-class chart-margin"></div>
+	<div id="chartContainerFour" style="height: 370px; width: 700px" class="chart-class chart-margin"></div>
 	<div id="chartContainerFive" style="height: 370px; width: 200px" class="chart-class"></div>
+
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
 </body>
 
 </html>
