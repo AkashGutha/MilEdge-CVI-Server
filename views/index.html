@@ -12,6 +12,7 @@
 			margin-bottom: 10px;
 			display: inline-block;
 		}
+
 		.chart-margin {
 			margin-right: 10px;
 		}
@@ -507,7 +508,6 @@
 				cvi[i] = (((functional_benefits[i] / 10 + social_benefits[i] / 10 + psychological_benefits[i] / 10) / 19) / (1.1 - ((opportunity_cost[i] / 10 + monetary_cost[i] / 10) / 8))).toFixed(2);
 			}
 
-			console.log(psychological_benefits)
 			document.getElementById('cvi').innerHTML = cvi[cvi.length - 1]
 
 			var chart = new CanvasJS.Chart("chartContainer", {
@@ -704,8 +704,14 @@
 				}]
 			});
 			chart.render();
-			console.log(cvi.length)
-			var chart = new CanvasJS.Chart("lineChartContainer", {
+
+			// Live example////
+
+
+			var dataPoint = [];
+			// var sampleValue = [[0, 7], [1, 8], [2, 4], [3, 3], [4, 5], [5, 1], [6, 2], [7, 0], [8, -2], [9, -7]];
+
+			var chart = new CanvasJS.Chart("liveLineChartContainer", {
 				animationEnabled: true,
 				backgroundColor: "#2F3547",
 				//theme: "dark1", // "light1", "light2", "dark1", "dark2"
@@ -731,22 +737,34 @@
 				},
 				data: [{
 					type: "line",
-					dataPoints: [
-						{ y: parseFloat(cvi[0]) },
-						{ y: parseFloat(cvi[1]) },
-						{ y: parseFloat(cvi[2]) },
-						{ y: parseFloat(cvi[3]) },
-						{ y: parseFloat(cvi[4]) },
-						{ y: parseFloat(cvi[5]) },
-						{ y: parseFloat(cvi[6]) },
-						{ y: parseFloat(cvi[7]) },
-						{ y: parseFloat(cvi[8]) },
-						{ y: parseFloat(cvi[9]) }
-
-					]
+					dataPoints: dataPoint
 				}]
 			});
-			chart.render();
+
+			var i = 0;
+			updateData();
+
+			function addData(data) {
+
+				dataPoint.push({ y: data })
+				console.log(dataPoint)
+				chart.render();
+				setTimeout(updateData, 10000);
+			}
+
+			function updateData() {
+				var newData = parseFloat(cvi[i]);
+
+				console.log('new' + newData + ' ' + typeof newData)
+				if (i != cvi.length)
+					addData(newData)
+				i++;
+			}
+
+			//Live bar example
+
+
+			
 
 		}	
 	</script>
@@ -765,13 +783,18 @@
 		</div>
 	</div>
 
-	<div id="lineChartContainer" style="height: 370px; width: 100%;" class="chart-class"></div>
+	<div id="liveLineChartContainer" style="height: 370px; width: 100%;" class="chart-class"></div>
 
 	<div id="chartContainer" style="height: 370px; width: 774px" class="chart-class chart-margin"></div>
 	<div id="chartContainerTwo" style="height: 370px; width: 915px" class="chart-class"></div>
 	<div id="chartContainerThree" style="height: 370px; width: 774px" class="chart-class chart-margin"></div>
 	<div id="chartContainerFour" style="height: 370px; width: 700px" class="chart-class chart-margin"></div>
 	<div id="chartContainerFive" style="height: 370px; width: 200px" class="chart-class"></div>
+
+
+
+	<!-- <div id="liveLineChartContainer" style="height: 370px; width: 100%;"></div> -->
+
 
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
