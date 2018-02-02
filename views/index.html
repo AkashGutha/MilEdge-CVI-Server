@@ -551,19 +551,28 @@
 				}]
 			});
 
-			var updateChart = function () {
-				var boilerColor, deltaY, yVal;
-				var dps = chart.options.data[0].dataPoints;
-				for (var i = 0; i < dps.length; i++) {
-					deltaY = Math.round(2 + Math.random() * (2, 2));
-					yVal = deltaY + dps[i].y < 10 ? dps[i].y + deltaY : 3;
-					boilerColor = yVal > 200 ? "#FFFFFF" : yVal >= 170 ? "#FFFFFF" : yVal < 170 ? "#FFFFFF " : null;
-					dps[i] = { label: chart.options.data[0].dataPoints[i].label, y: yVal, color: boilerColor };
-				}
-				chart.options.data[0].dataPoints = dps;
-				chart.render();
-			};
-			updateChart();
+			var boilerColor, deltaY =0, yVal =0,temp, temp;
+            var updateChart = function () {
+                var dps = chart.options.data[0].dataPoints;
+                for (var i = 0; i < dps.length; i++) {
+                   temp = Math.floor(Math.random()*(2)+1);
+                    console.log("Value of Temp is"+temp);
+                    if(temp > deltaY){
+                        deltaY = temp
+                        yVal = deltaY + dps[i].y < 10 ? dps[i].y + deltaY : 3;
+                    }
+                    else{
+                        yVal =deltaY < 10 ? dps[i].y + deltaY : 3;
+                    }
+                    if(yVal<10){
+                        boilerColor = yVal > 200 ? "#FFF" : yVal >= 170 ? "#FFF" : yVal < 170 ? "#FFF " : null;
+                        dps[i] = { label: chart.options.data[0].dataPoints[i].label, y: yVal, color: boilerColor };
+                    }
+                }
+                chart.options.data[0].dataPoints = dps;
+                chart.render();
+            };
+            updateChart();
 
 			// .................................Functional Benifits Ends Here...............................................
 
@@ -607,19 +616,28 @@
 				}]
 			});
 
-			var updateChart2 = function () {
-				var boilerColor1, deltaY1, yVal1;
-				var dps1 = chart2.options.data[0].dataPoints;
-				for (var i = 0; i < dps1.length; i++) {
-					deltaY1 = Math.round(2 + Math.random() * (2, 2));
-					yVal1 = deltaY1 + dps1[i].y < 10 ? dps1[i].y + deltaY1 : 3;
-					boilerColor1 = yVal1 > 200 ? "#FFFFFF" : yVal1 >= 170 ? "#FFFFFF" : yVal1 < 170 ? "#FFFFFF " : null;
-					dps1[i] = { label: chart2.options.data[0].dataPoints[i].label, y: yVal1, color: boilerColor1 };
-				}
-				chart2.options.data[0].dataPoints = dps1;
-				chart2.render();
-			};
-			updateChart2();
+			var boilerColor2, deltaY2 =0, yVal2 =0,temp, temp2;
+            var updateChart2 = function () {
+                var dps2 = chart2.options.data[0].dataPoints;
+                for (var i = 0; i < dps2.length; i++) {
+                   temp = Math.floor(Math.random()*(2)+1);
+                    console.log("Value of Temp is"+temp);
+                    if(temp > deltaY2){
+                        deltaY2 = temp
+                        yVal2 = deltaY2 + dps2[i].y < 10 ? dps2[i].y + deltaY2 : 3;
+                    }
+                    else{
+                        yVal2 =deltaY2 < 10 ? dps2[i].y + deltaY2 : 3;
+                    }
+                    if(yVal2<10){
+                        boilerColor2 = yVal2 > 200 ? "#FFF" : yVal2 >= 170 ? "#FFF" : yVal2 < 170 ? "#FFF " : null;
+                        dps2[i] = { label: chart2.options.data[0].dataPoints[i].label, y: yVal2, color: boilerColor2 };
+                    }
+                }
+                chart2.options.data[0].dataPoints = dps2;
+                chart2.render();
+            };
+            updateChart2();
 
 			// ..................................Social Benifits Ends Here  ..............................................
 
@@ -664,19 +682,28 @@
 				}]
 			});
 
-			var updateChart3 = function () {
-				var boilerColor3, deltaY3, yVal3;
-				var dps3 = chart3.options.data[0].dataPoints;
-				for (var i = 0; i < dps3.length; i++) {
-					deltaY3 = Math.round(2 + Math.random() * (2, 2));
-					yVal3 = deltaY3 + dps3[i].y < 10 ? dps3[i].y + deltaY3 : 3;
-					boilerColor3 = yVal3 > 200 ? "#FFFFFF" : yVal3 >= 170 ? "#FFFFFF" : yVal3 < 170 ? "#FFFFFF " : null;
-					dps3[i] = { label: chart3.options.data[0].dataPoints[i].label, y: yVal3, color: boilerColor3 };
-				}
-				chart3.options.data[0].dataPoints = dps3;
-				chart3.render();
-			};
-			updateChart3();
+			var boilerColor3, deltaY3 =0, yVal3 =0,temp, temp3;
+            var updateChart3 = function () {
+                var dps3 = chart3.options.data[0].dataPoints;
+                for (var i = 0; i < dps3.length; i++) {
+                   temp = Math.floor(Math.random()*(2)+1);
+                    console.log("Value of Temp is"+temp);
+                    if(temp > deltaY3){
+                        deltaY3 = temp
+                        yVal3 = deltaY3 + dps3[i].y < 10 ? dps3[i].y + deltaY3 : 3;
+                    }
+                    else{
+                        yVal3 =deltaY3 < 10 ? dps3[i].y + deltaY3 : 3;
+                    }
+                    if(yVal3<10){
+                        boilerColor3 = yVal3 > 200 ? "#FFF" : yVal3 >= 170 ? "#FFF" : yVal3 < 170 ? "#FFF " : null;
+                        dps3[i] = { label: chart3.options.data[0].dataPoints[i].label, y: yVal3, color: boilerColor3 };
+                    }
+                }
+                chart3.options.data[0].dataPoints = dps3;
+                chart3.render();
+            };
+            updateChart3();
 
 			// ....................................Physocological Benifits Ends Here  ................................... 
 
@@ -719,19 +746,28 @@
 				}]
 			});
 
-			var updateChart4 = function () {
-				var boilerColor4, deltaY4, yVal4;
-				var dps4 = chart4.options.data[0].dataPoints;
-				for (var i = 0; i < dps4.length; i++) {
-					deltaY4 = Math.round(2 + Math.random() * (2, 2));
-					yVal4 = deltaY4 + dps4[i].y < 10 ? dps4[i].y + deltaY4 : 3;
-					boilerColor4 = yVal4 > 200 ? "#FFFFFF" : yVal4 >= 170 ? "#FFFFFF" : yVal4 < 170 ? "#FFFFFF " : null;
-					dps4[i] = { label: chart4.options.data[0].dataPoints[i].label, y: yVal4, color: boilerColor4 };
-				}
-				chart4.options.data[0].dataPoints = dps4;
-				chart4.render();
-			};
-			updateChart4();
+			var boilerColor4, deltaY4 =0, yVal4 =0,temp, temp4;
+            var updateChart4 = function () {
+                var dps4 = chart4.options.data[0].dataPoints;
+                for (var i = 0; i < dps4.length; i++) {
+                   temp = Math.floor(Math.random()*(2)+1);
+                    console.log("Value of Temp is"+temp);
+                    if(temp > deltaY4){
+                        deltaY4 = temp
+                        yVal4 = deltaY4 + dps4[i].y < 10 ? dps4[i].y + deltaY4 : 3;
+                    }
+                    else{
+                        yVal4 =deltaY4 < 10 ? dps4[i].y + deltaY4 : 3;
+                    }
+                    if(yVal4<10){
+                        boilerColor4 = yVal4 > 200 ? "#FFF" : yVal4 >= 170 ? "#FFF" : yVal4 < 170 ? "#FFF " : null;
+                        dps4[i] = { label: chart4.options.data[0].dataPoints[i].label, y: yVal4, color: boilerColor4 };
+                    }
+                }
+                chart4.options.data[0].dataPoints = dps4;
+                chart4.render();
+            };
+            updateChart4();
 
 			// ..................................... Opportunity Cost Ends Here ..........................................
 
@@ -771,19 +807,28 @@
 				}]
 			});
 
-			var updateChart5 = function () {
-				var boilerColor5, deltaY5, yVal5;
-				var dps5 = chart5.options.data[0].dataPoints;
-				for (var i = 0; i < dps5.length; i++) {
-					deltaY5 = Math.round(2 + Math.random() * (2, 2));
-					yVal5 = deltaY5 + dps5[i].y < 10 ? dps5[i].y + deltaY5 : 3;
-					boilerColor5 = yVal5 > 200 ? "#FFFFFF" : yVal5 >= 170 ? "#FFFFFF" : yVal5 < 170 ? "#FFFFFF " : null;
-					dps5[i] = { label: chart5.options.data[0].dataPoints[i].label, y: yVal5, color: boilerColor5 };
-				}
-				chart5.options.data[0].dataPoints = dps5;
-				chart5.render();
-			};
-			updateChart5();
+			var boilerColor5, deltaY5 =0, yVal5 =0,temp, temp5;
+            var updateChart5 = function () {
+                var dps5 = chart5.options.data[0].dataPoints;
+                for (var i = 0; i < dps5.length; i++) {
+                   temp = Math.floor(Math.random()*(2)+1);
+                    console.log("Value of Temp is"+temp);
+                    if(temp > deltaY5){
+                        deltaY5 = temp
+                        yVal5 = deltaY5 + dps5[i].y < 10 ? dps5[i].y + deltaY5 : 3;
+                    }
+                    else{
+                        yVal5 =deltaY5 < 10 ? dps5[i].y + deltaY5 : 3;
+                    }
+                    if(yVal5<10){
+                        boilerColor5 = yVal5 > 200 ? "#FFF" : yVal5 >= 170 ? "#FFF" : yVal5 < 170 ? "#FFF " : null;
+                        dps5[i] = { label: chart5.options.data[0].dataPoints[i].label, y: yVal5, color: boilerColor5 };
+                    }
+                }
+                chart5.options.data[0].dataPoints = dps5;
+                chart5.render();
+            };
+            updateChart5();
 
 			// ...................................... Monetory Cost Ends Here ...........................................
 
@@ -861,7 +906,7 @@
                 }
 
             }
-			setInterval(function () { functionC() }, 40000);
+			setInterval(function () { functionC() }, 4000);
 
 		}
 
